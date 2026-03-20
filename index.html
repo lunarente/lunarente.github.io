@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luciana Narente | ML & Data</title>
+
+  <!-- FONTES -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- ÍCONES -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <style>
+     html {
+    scroll-behavior: smooth;
+    } 
+    :root {
+      --bg-main: #0c0f08;
+      --bg-soft: #151b10;
+      --card: rgba(20, 24, 12, 0.9);
+      --orange: #ff8c42;
+      --green: #7a8f46;
+      --text: #f2e7d5;
+      --muted: #a69b88;
+      --border: #2d381f;
+
+      --mono: 'JetBrains Mono', monospace;
+      --body: 'Inter', sans-serif;
+    }
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--body);
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 30%, rgba(255,140,66,0.15), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(122,143,70,0.15), transparent 40%),
+        var(--bg-main);
+      line-height: 1.6;
+    }
+
+    /* MENU */
+    .sidebar {
+      position: fixed;
+      width: 220px;
+      height: 100vh;
+      background: rgba(10,12,8,0.95);
+      padding: 2rem 1.2rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .menu a {
+      display: block;
+      margin: 0.6rem 0;
+      color: var(--muted);
+      text-decoration: none;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      transition: 0.2s;
+    }
+
+    .menu a:hover {
+      color: var(--orange);
+    }
+
+    main {
+      margin-left: 220px;
+    }
+
+    section {
+      padding: 5rem 3rem;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 80px;
+
+    }
+
+    /* HERO */
+    .hero h1 {
+      font-family: var(--mono);
+      font-size: 3.5rem;
+    }
+
+    .hero h1 span:first-child { color: var(--orange); }
+    .hero h1 span:last-child { color: var(--green); }
+
+    .hero p {
+      max-width: 600px;
+      margin-top: 1rem;
+      color: var(--muted);
+    }
+
+    .tags {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.7rem;
+      font-size: 0.7rem;
+      font-family: var(--mono);
+      color: var(--muted);
+    }
+
+    /* BOTÕES */
+    .actions {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      transition: all 0.25s ease;
+      padding: 0.7rem 1.2rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-family: var(--mono);
+      border: 1px solid var(--orange);
+      color: #111;
+      background: var(--orange);
+      cursor: pointer;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn.alt {
+      background: transparent;
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 1.2rem;
+    }
+
+    .card h3 {
+      font-family: var(--mono);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* STACK */
+    .stack span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0.3rem;
+      padding: 0.4rem 0.7rem;
+      border: 1px solid var(--border);
+      font-size: 0.7rem;
+      font-family: var(--mono);
+    }
+
+    /* CONTACT */
+    #contact {
+      text-align: left;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 1rem 3rem;
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-family: var(--mono);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media(max-width: 900px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      main {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <div class="menu">
+      <a href="#home"><i class="ri-terminal-line"></i> Início</a>
+      <a href="#about"><i class="ri-user-4-line"></i> Sobre</a>
+      <a href="#projects"><i class="ri-code-box-line"></i> Projetos</a>
+      <a href="#stack"><i class="ri-stack-line"></i> Stacks</a>
+      <a href="#contact"><i class="ri-mail-line"></i> Contato</a>
+    </div>
+  </div>
+
+  <main>
+
+    <section id="home" class="hero">
+      <h1><span>Luciana</span> <span>Narente</span></h1>
+      <p>Construindo projetos de Machine Learning com foco em dados, APIs, deploy e valor de negócio</p>
+
+      <div class="tags">
+        <span class="tag">Data Engineering</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Data Analitcs</span>
+        <span class="tag">AI</span>
+        <span class="tag">Data Science</span>
+      </div>
+
+      <div class="actions">
+        <a href="#projects" class="btn alt">Projetos</a>
+        <a href="#contact" class="btn alt">Contato</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>Sobre</h2>
+      <p style="max-width:600px; color:var(--muted)">
+        Construindo uma transição estratégica para a área de <strong>Machine Learning, Dados e MLOps</strong>, combinando visão de negócio, estudo aplicado e projetos práticos.
+      </p>
+      <p style="max-width:600px; color:var(--muted)">
+          Meu foco é transformar modelos em soluções utilizáveis, conectando <strong>análise de dados</strong>, <strong>APIs</strong>, <strong>deploy</strong> e <strong>arquitetura em cloud</strong>.
+          <p style="max-width:600px; color:var(--muted)">
+          Tenho especial interesse em problemas de <strong>fraude</strong>, <strong>risco</strong>, <strong>automação</strong> e construção de produtos de dados com narrativa clara de negócio.
+        </p>
+        </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projetos</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Detecção de Fraude - em breve</h3>
+          <p>Pipeline e modelo supervisionado para risco.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <h2>Stacks</h2>
+      <div class="stack">
+        <span><i class="devicon-python-plain"></i> Python</span>
+        <span><i class="devicon-pandas-plain"></i> Pandas</span>
+        <span><i class="devicon-numpy-plain"></i> NumPy</span>
+        <span><i class="ri-database-2-line"></i> SQL</span>
+        <span><i class="devicon-scikitlearn-plain"></i> Scikit-learn</span>
+        <span><i class="devicon-fastapi-plain"></i> FastAPI</span>
+        <span><i class="devicon-docker-plain"></i> Docker</span>
+        <span><i class="ri-cloud-line"></i> AWS</span>
+        <span><i class="devicon-git-plain"></i> Git</span>
+        <span><i class="devicon-github-original"></i> GitHub</span>
+        <span><i class="devicon-streamlit-plain"></i> Streamlit</span>
+        <span><i class="devicon-terraform-plain"></i> Terraform</span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contato</h2>
+      <p style="color:var(--muted); margin-bottom:1.5rem;">
+        Aberta a oportunidades em ML, Dados e Engenharia.
+      </p>
+
+      <div class="actions">
+        <a href="mailto:lucinarente@gmail.com" class="btn alt"
+             onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=lucinarente@gmail.com'); return false;">
+          <i class="ri-mail-send-line"></i> Email
+        </a>
+
+        <a href="https://wa.me/5511998309985" target="_blank" class="btn alt">
+          <i class="ri-whatsapp-line"></i> WhatsApp
+        </a>
+
+        <a href="https://linkedin.com/in/luciana-narente" target="_blank" class="btn alt">
+          <i class="ri-linkedin-box-line"></i> LinkedIn
+        </a>
+
+        <a href="https://github.com/lunarente" target="_blank" class="btn alt">
+          <i class="ri-github-line"></i> GitHub
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>LN</span>
+    <span>ml · data · cloud · engineering</span>
+  </footer>
+
+</body>
+</html>      

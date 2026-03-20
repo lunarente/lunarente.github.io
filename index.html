@@ -13,8 +13,30 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
   <style>
+    .terminal {
+      font-family: var(--mono);
+      color: var(--green);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      min-height: 24px;
+    }
+
+    /* já deve ter cursor, mas se não tiver: */
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: var(--orange);
+      margin-left: 3px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
      html {
-    scroll-behavior: smooth;
+      scroll-behavior: smooth;
     } 
     :root {
       --bg-main: #0c0f08;
@@ -226,6 +248,10 @@
 
     <section id="home" class="hero">
       <h1><span>Luciana</span> <span>Narente</span></h1>
+      <div class="terminal">
+      <span id="terminal-text"></span>
+      <span class="cursor"></span>
+      </div>
       <p>Construindo projetos de Machine Learning com foco em dados, APIs, deploy e valor de negócio</p>
 
       <div class="tags">
@@ -315,6 +341,48 @@
     <span>LN</span>
     <span>ml · data · cloud · engineering</span>
   </footer>
+  <script>
+const steps = [
+  '> carregando dados...',
+  '> limpando dataset...',
+  '> feature engineering...',
+  '> treinando modelo...',
+  '> avaliando métricas...',
+  '> deploy em andamento...',
+  '> pronto.'
+];
+
+let stepIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+const el = document.getElementById('terminal-text');
+
+function typeEffect() {
+  const current = steps[stepIndex];
+
+  el.textContent = current.substring(0, charIndex);
+
+  if (!deleting) {
+    charIndex++;
+    if (charIndex > current.length) {
+      deleting = true;
+      setTimeout(typeEffect, 800);
+      return;
+    }
+  } else {
+    charIndex--;
+    if (charIndex < 0) {
+      deleting = false;
+      stepIndex = (stepIndex + 1) % steps.length;
+    }
+  }
+
+  setTimeout(typeEffect, deleting ? 20 : 40);
+}
+
+typeEffect();
+</script>
 
 </body>
 </html>      

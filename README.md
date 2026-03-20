@@ -1,13 +1,13 @@
-# 👩‍💻 Portfólio — Luciana Narente
+# Portfólio — Luciana Narente
 
 Portfólio focado em Machine Learning, Dados e Engenharia, com projetos voltados para fraude, risco e automação.
 
 ## 🔗 Acesse o site
-👉 https://lunarente.github.io
+https://lunarente.github.io
 
 ---
 
-## 🧠 Sobre
+## Sobre
 
 Este portfólio foi construído para demonstrar habilidades em:
 
@@ -19,14 +19,14 @@ Este portfólio foi construído para demonstrar habilidades em:
 
 ---
 
-## 🚀 Projetos
+## Projetos
 
-### 🔹 Detecção de Fraude
+### Detecção de Fraude
 Pipeline de dados + modelo supervisionado para análise de risco.
 
 ---
 
-## ⚙️ Stack
+## Stacks
 
 - Python
 - Pandas / NumPy / Scikit-learn
